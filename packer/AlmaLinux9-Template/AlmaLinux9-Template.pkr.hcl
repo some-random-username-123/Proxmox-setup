@@ -8,10 +8,6 @@ packer {
       version = ">= 1.1.2"
       source  = "github.com/hashicorp/proxmox"
     }
-    ansible = {
-      source  = "github.com/hashicorp/ansible"
-      version = "~> 1"
-    }
   }
 }
 
@@ -73,10 +69,9 @@ source "proxmox-iso" "AlmaLinux9-Template" {
     scsi_controller = "virtio-scsi-pci"
 
     disks {
-        disk_size           = "20G"
+        disk_size           = "32G"
         storage_pool        = "local-lvm"
-        storage_pool_type   = "lvm"
-        type                = "virtio"
+        type                = "scsi"
     }
 
     # VM CPU Settings
@@ -94,8 +89,8 @@ source "proxmox-iso" "AlmaLinux9-Template" {
     }
 
     # VM Cloud-Init Settings
-    cloud_init             = true
-    cloud_init_storage_pool = "local-lvm"
+    cloud_init             = false
+    #cloud_init_storage_pool = "local-lvm"
 
     # PACKER Boot Commands
     boot_command = [
