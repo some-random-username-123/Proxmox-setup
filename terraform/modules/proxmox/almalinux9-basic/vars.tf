@@ -105,7 +105,7 @@ variable "vm_template_node_name" {
 variable "vm_ci_interface" {
     description = "The Interface for the Cloudinit drive on the VM."
     type = string
-    default = "ide0"
+    default = "scsi1"
 }
 
 variable "vm_template_id" {
