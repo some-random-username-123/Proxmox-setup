@@ -12,7 +12,7 @@ module "tsttf01" {
     vm_description          = "Test VM for tf module. "
     vm_tags                 = ["tst"]
     vm_id                   = 1001
-    vm_ci_interface         = "ide0"
+    vm_ci_interface         = "scsi1"
     vm_template_id          = 9001
     vm_ip_address           = "dhcp"
     vm_disks                = []
